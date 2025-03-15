@@ -5,7 +5,7 @@ Step into the **Coding-Chemist's Lab**, where science meets code and curiosity s
 I used to wonder, *"Why would a chemist learn to code?"* But then it clicked: coding is like talking to computers, and the best part? They tell you exactly where you went wrong! It's a form of communication that’s precise and logical—perfect for someone who enjoys solving complex problems methodically.
 
 ## My Journey 🚀  
-What started with Python as a simple way to automate tasks has now led me into a world of infinite possibilities. Python introduced me to its amazing “friends” like Artificial Intelligence, Machine Learning, Deep Learning, Data Science, R—and the list keeps growing!  
+What started with Python as a simple way to automate tasks has now led me into a world of infinite possibilities. Python introduced me to its amazing “friends” like Artificial Intelligence, Machine Learning, Deep Learning, Data Science, GenAI, R—and the list keeps growing!  
 
 Now, I’m on a mission to build:
 - **Beautiful, engaging projects** that solve real-world problems.  
