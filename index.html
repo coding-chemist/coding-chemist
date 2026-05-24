@@ -85,7 +85,7 @@
       z-index: 1;
       max-width: 700px;
       margin: 0 auto;
-      padding: 148px max(24px, 5vw) 100px;
+      padding: 88px max(24px, 5vw) 64px;
     }
 
     /* ── EC badge ──────────────────────────────────────── */
@@ -93,7 +93,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 28px;
+      margin-bottom: 16px;
       opacity: 0;
       animation: riseIn 0.6s ease 0.1s forwards;
     }
@@ -109,14 +109,14 @@
 
     /* ── Hero text ─────────────────────────────────────── */
     .hero {
-      margin-bottom: 72px;
+      margin-bottom: 40px;
       opacity: 0;
       animation: riseIn 0.7s ease 0.2s forwards;
     }
 
     .hero h1 {
       font-family: 'JetBrains Mono', monospace;
-      font-size: clamp(3rem, 9vw, 5.2rem);
+      font-size: clamp(2.4rem, 4.8vw, 3.6rem);
       font-weight: 600;
       letter-spacing: -0.045em;
       line-height: 1;
@@ -191,8 +191,8 @@
       color: var(--ink);
     }
 
-    /* Pulsing "Building" chip */
-    .chip-building {
+    /* Live chip */
+    .chip-live {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -200,15 +200,55 @@
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #92400e;
+      color: #065f46;
     }
 
     .chip-dot {
       width: 6px; height: 6px;
       border-radius: 50%;
-      background: #f59e0b;
+      background: #10b981;
       flex-shrink: 0;
       animation: blink 2s ease-in-out infinite;
+    }
+
+    /* Card action links */
+    .card-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .card-link-primary {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: #fff;
+      background: var(--purple);
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: all 0.22s ease;
+    }
+    .card-link-primary:hover { background: #6d28d9; }
+
+    .card-link-secondary {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--purple);
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--purple-20);
+      background: var(--purple-10);
+      transition: all 0.22s ease;
+    }
+    .card-link-secondary:hover {
+      background: rgba(124,58,237,0.16);
+      border-color: rgba(124,58,237,0.4);
     }
 
     .card-desc {
@@ -343,25 +383,31 @@
           </svg>
           <h2>Curie</h2>
         </div>
-        <div class="chip-building">
+        <div class="chip-live">
           <span class="chip-dot"></span>
-          Building
+          Live
         </div>
       </div>
 
       <p class="card-desc">
-        A citation-backed chemistry agent that eliminates hallucinations by grounding every answer in live PubChem data. Named for Marie Curie — rigorous, patient, and obsessively traceable.
+        An NMR structure elucidation agent. Paste ¹H and ¹³C peak lists — Curie retrieves the closest known compounds from NMRShiftDB via FAISS, interprets every peak with an LLM grounded in retrieved candidates, and reranks results via RDKit substructure matching.
       </p>
 
       <div class="card-rule"></div>
 
       <div class="tags">
-        <span class="tag">LangGraph</span>
+        <span class="tag">FAISS</span>
+        <span class="tag">NMRShiftDB</span>
         <span class="tag">FastAPI</span>
         <span class="tag">React</span>
         <span class="tag">RDKit</span>
-        <span class="tag">PubChem API</span>
         <span class="tag">RAG</span>
+        <span class="tag">LLM</span>
+      </div>
+
+      <div class="card-links">
+        <a href="https://curie-eta.vercel.app" target="_blank" class="card-link-primary">Try it →</a>
+        <a href="https://github.com/coding-chemist/Curie" target="_blank" class="card-link-secondary">GitHub ↗</a>
       </div>
     </div>
 
