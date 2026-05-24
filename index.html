@@ -191,6 +191,28 @@
       color: var(--ink);
     }
 
+    /* Card spacing */
+    .card + .card { margin-top: 20px; }
+
+    /* Building chip */
+    .chip-building {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #92400e;
+    }
+    .chip-dot-amber {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #f59e0b;
+      flex-shrink: 0;
+      animation: blink 2s ease-in-out infinite;
+    }
+
     /* Live chip */
     .chip-live {
       display: inline-flex;
@@ -369,7 +391,81 @@
     <!-- Projects -->
     <p class="section-label">Projects</p>
 
+    <!-- Apex: Autopilot -->
     <div class="card">
+      <div class="card-head">
+        <div class="card-identity">
+          <svg width="28" height="28" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="11" cy="3.5" r="2" fill="#7c3aed"/>
+            <circle cx="3.5" cy="17" r="2" fill="#7c3aed"/>
+            <circle cx="18.5" cy="17" r="2" fill="#7c3aed"/>
+            <line x1="11" y1="5.5" x2="3.5" y2="15" stroke="#7c3aed" stroke-width="1.2"/>
+            <line x1="11" y1="5.5" x2="18.5" y2="15" stroke="#7c3aed" stroke-width="1.2"/>
+            <line x1="5.5" y1="17" x2="16.5" y2="17" stroke="#7c3aed" stroke-width="1.2"/>
+            <circle cx="11" cy="11" r="1.8" fill="rgba(124,58,237,0.25)" stroke="#7c3aed" stroke-width="0.8"/>
+          </svg>
+          <h2>Apex</h2>
+        </div>
+        <div class="chip-building">
+          <span class="chip-dot-amber"></span>
+          Building
+        </div>
+      </div>
+
+      <p class="card-desc">
+        A sprint ceremony AI. Three ReAct agents — Scout, Analyst, Strategist — prepare your full sprint plan, risk analysis, and demo script from GitHub data. Walk into planning already knowing what to pick and why.
+      </p>
+
+      <div class="card-rule"></div>
+
+      <div class="tags">
+        <span class="tag">LangGraph</span>
+        <span class="tag">Multi-Agent</span>
+        <span class="tag">Groq</span>
+        <span class="tag">FAISS</span>
+        <span class="tag">MCP</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">FastAPI</span>
+      </div>
+    </div>
+
+    <!-- Beacon -->
+    <div class="card" style="animation-delay: 0.52s;">
+      <div class="card-head">
+        <div class="card-identity">
+          <svg width="28" height="28" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="11" cy="14" r="2.2" fill="#7c3aed"/>
+            <path d="M7.2 17.8a5.5 5.5 0 0 1 0-7.6" stroke="#7c3aed" stroke-width="1.25" stroke-linecap="round"/>
+            <path d="M14.8 17.8a5.5 5.5 0 0 0 0-7.6" stroke="#7c3aed" stroke-width="1.25" stroke-linecap="round"/>
+            <path d="M4 20.5a10 10 0 0 1 0-13" stroke="#7c3aed" stroke-width="1.25" stroke-linecap="round" opacity="0.4"/>
+            <path d="M18 20.5a10 10 0 0 0 0-13" stroke="#7c3aed" stroke-width="1.25" stroke-linecap="round" opacity="0.4"/>
+          </svg>
+          <h2>Beacon</h2>
+        </div>
+        <div class="chip-building">
+          <span class="chip-dot-amber"></span>
+          Building
+        </div>
+      </div>
+
+      <p class="card-desc">
+        Multi-modal communication intelligence. Fuses face landmarks, body pose, hand gestures, speech transcription, and audio features into a second-by-second confidence timeline — so you know exactly how you come across.
+      </p>
+
+      <div class="card-rule"></div>
+
+      <div class="tags">
+        <span class="tag">OpenCV</span>
+        <span class="tag">Mediapipe</span>
+        <span class="tag">Whisper</span>
+        <span class="tag">librosa</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">FastAPI</span>
+      </div>
+    </div>
+
+    <!-- Curie -->
+    <div class="card" style="animation-delay: 0.59s;">
       <div class="card-head">
         <div class="card-identity">
           <svg width="28" height="28" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
