@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>coding-chemist — Sindhuja Sivaraman</title>
+  <link rel="icon" type="image/png" href="sindhu-logo.png" />
+  <link rel="apple-touch-icon" href="sindhu-logo.png" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,300&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
@@ -15,31 +17,35 @@
     }
 
     :root {
-      --purple:   #7c3aed;
-      --purple-10: rgba(124,58,237,0.10);
-      --purple-20: rgba(124,58,237,0.20);
-      --ink:      #1d1d1f;
-      --mid:      #6e6e73;
-      --rule:     rgba(0,0,0,0.08);
-      --card-bg:  rgba(255,255,255,0.78);
-      --bg:       #f5f5f7;
+      --ink:      #18181b;
+      --mid:      #71717a;
+      --rule:     rgba(0,0,0,0.07);
+      --card-bg:  rgba(255,255,255,0.82);
     }
 
+    /* Per-project color tokens — set on each .card-* */
+    .card-apex   { --c:#0284c7; --c10:rgba(2,132,199,0.10);  --c20:rgba(2,132,199,0.22);  --ch:#0369a1; }
+    .card-beacon { --c:#d97706; --c10:rgba(217,119,6,0.10);  --c20:rgba(217,119,6,0.22);  --ch:#b45309; }
+    .card-curie  { --c:#7c3aed; --c10:rgba(124,58,237,0.10); --c20:rgba(124,58,237,0.22); --ch:#6d28d9; }
+    .card-darwin { --c:#059669; --c10:rgba(5,150,105,0.10);  --c20:rgba(5,150,105,0.22);  --ch:#047857; }
+
     body {
-      background: var(--bg);
+      background: linear-gradient(140deg, #eef6ff 0%, #f1faf5 28%, #fffbf0 58%, #f5f0ff 100%);
       color: var(--ink);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       min-height: 100vh;
     }
 
-    /* ── Ambient glow — barely visible ─────────────────── */
+    /* ── Quad-color ambient glow ─────────────────────────── */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(ellipse 900px 700px at 15% 5%,  rgba(124,58,237,0.06) 0%, transparent 65%),
-        radial-gradient(ellipse 500px 500px at 85% 90%, rgba(96,165,250,0.05) 0%, transparent 65%);
+        radial-gradient(ellipse 700px 600px at 6%   4%,  rgba(2,132,199,0.09)   0%, transparent 60%),
+        radial-gradient(ellipse 500px 500px at 40%  12%, rgba(217,119,6,0.06)   0%, transparent 60%),
+        radial-gradient(ellipse 540px 540px at 70%  88%, rgba(5,150,105,0.07)   0%, transparent 60%),
+        radial-gradient(ellipse 600px 600px at 96%  82%, rgba(124,58,237,0.07)  0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
@@ -61,13 +67,32 @@
     }
 
     .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.82rem;
       font-weight: 600;
       letter-spacing: -0.01em;
       color: var(--ink);
+      text-decoration: none;
     }
-    .nav-brand em { color: var(--purple); font-style: normal; }
+    .nav-brand img {
+      height: 32px;
+      width: auto;
+      border-radius: 4px;
+      display: block;
+    }
+    .nav-brand span {
+      letter-spacing: -0.01em;
+    }
+    .nav-brand em {
+      background: linear-gradient(90deg, #0284c7 0%, #d97706 35%, #059669 65%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: normal;
+    }
 
     nav a {
       font-size: 0.78rem;
@@ -77,13 +102,13 @@
       letter-spacing: 0.01em;
       transition: color 0.2s;
     }
-    nav a:hover { color: var(--purple); }
+    nav a:hover { color: var(--ink); }
 
     /* ── Page shell ────────────────────────────────────── */
     main {
       position: relative;
       z-index: 1;
-      max-width: 700px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 88px max(24px, 5vw) 64px;
     }
@@ -105,7 +130,14 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
-    .ec-badge em { color: var(--purple); font-style: normal; font-weight: 600; }
+    .ec-badge em {
+      background: linear-gradient(90deg, #0284c7 0%, #d97706 35%, #059669 65%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: normal;
+      font-weight: 600;
+    }
 
     /* ── Hero text ─────────────────────────────────────── */
     .hero {
@@ -123,7 +155,13 @@
       color: var(--ink);
       margin-bottom: 18px;
     }
-    .hero h1 em { color: var(--purple); font-style: normal; }
+    .hero h1 em {
+      background: linear-gradient(90deg, #0284c7 0%, #d97706 35%, #059669 65%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: normal;
+    }
 
     .hero p {
       font-size: clamp(1rem, 2.5vw, 1.15rem);
@@ -191,8 +229,193 @@
       color: var(--ink);
     }
 
-    /* Card spacing */
-    .card + .card { margin-top: 20px; }
+    /* Cards grid — 4 columns on desktop, equal height */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 1099px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Slightly tighter card padding for 4-up layout */
+    .card { padding: 28px 28px; }
+
+    /* Card fills height, links pinned to bottom */
+    .card {
+      display: flex;
+      flex-direction: column;
+    }
+    .card-rule { margin-top: auto; }
+
+    /* Clamp description to 4 lines */
+    .card-desc {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Read more button */
+    .read-more {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.63rem;
+      color: var(--c, #7c3aed);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-top: 5px;
+      letter-spacing: 0.02em;
+      text-align: left;
+    }
+    .read-more:hover { text-decoration: underline; }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.42);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: rgba(255,255,255,0.99);
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.92);
+      box-shadow: 0 40px 96px rgba(0,0,0,0.24);
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      animation: riseIn 0.32s ease forwards;
+      overflow: hidden;
+      padding: 0;
+    }
+    .modal-band {
+      height: 5px;
+      background: linear-gradient(90deg, var(--c, #7c3aed) 0%, var(--ch, #6d28d9) 100%);
+    }
+    .modal-inner { padding: 40px 44px 36px; }
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 20px;
+      background: rgba(0,0,0,0.04);
+      border: none;
+      font-size: 1.3rem;
+      color: var(--mid);
+      cursor: pointer;
+      line-height: 1;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      transition: background 0.15s, color 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    .modal-close:hover { background: rgba(0,0,0,0.1); color: var(--ink); }
+    .modal-eyebrow {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--c, #7c3aed);
+      background: var(--c10, rgba(124,58,237,0.10));
+      padding: 5px 11px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
+    .modal-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.85rem;
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .modal-tagline {
+      font-size: 0.97rem;
+      line-height: 1.5;
+      color: var(--mid);
+      font-style: italic;
+      padding-left: 14px;
+      border-left: 3px solid var(--c20, rgba(124,58,237,0.22));
+      margin-bottom: 30px;
+    }
+    .modal-section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.64rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+    .modal-streams {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .modal-stream {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .modal-stream-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--c, #7c3aed);
+      background: var(--c10, rgba(124,58,237,0.10));
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .modal-stream-text strong {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .modal-stream-text span {
+      display: block;
+      font-size: 0.86rem;
+      line-height: 1.6;
+      color: var(--mid);
+    }
+    .modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 22px;
+      border-top: 1px solid var(--rule);
+    }
+    @media (max-width: 600px) {
+      .modal-inner { padding: 32px 28px 28px; }
+      .modal-title { font-size: 1.55rem; }
+    }
 
     /* Building chip */
     .chip-building {
@@ -246,31 +469,30 @@
       font-weight: 500;
       letter-spacing: 0.03em;
       color: #fff;
-      background: var(--purple);
+      background: var(--c, #7c3aed);
       text-decoration: none;
       padding: 8px 18px;
       border-radius: 10px;
       border: 1px solid transparent;
       transition: all 0.22s ease;
     }
-    .card-link-primary:hover { background: #6d28d9; }
+    .card-link-primary:hover { filter: brightness(0.88); }
 
     .card-link-secondary {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.73rem;
       font-weight: 500;
       letter-spacing: 0.03em;
-      color: var(--purple);
+      color: var(--c, #7c3aed);
       text-decoration: none;
       padding: 8px 18px;
       border-radius: 10px;
-      border: 1px solid var(--purple-20);
-      background: var(--purple-10);
+      border: 1px solid var(--c20, rgba(124,58,237,0.22));
+      background: var(--c10, rgba(124,58,237,0.10));
       transition: all 0.22s ease;
     }
     .card-link-secondary:hover {
-      background: rgba(124,58,237,0.16);
-      border-color: rgba(124,58,237,0.4);
+      filter: brightness(0.92);
     }
 
     .card-desc {
@@ -299,11 +521,11 @@
       font-size: 0.67rem;
       font-weight: 500;
       letter-spacing: 0.03em;
-      color: var(--purple);
-      background: var(--purple-10);
+      color: var(--c, #7c3aed);
+      background: var(--c10, rgba(124,58,237,0.10));
       padding: 5px 11px;
       border-radius: 7px;
-      border: 1px solid var(--purple-20);
+      border: 1px solid var(--c20, rgba(124,58,237,0.20));
     }
 
     /* ── Footer ────────────────────────────────────────── */
@@ -336,18 +558,18 @@
       font-size: 0.73rem;
       font-weight: 500;
       letter-spacing: 0.03em;
-      color: var(--purple);
+      color: var(--ink);
       text-decoration: none;
       padding: 9px 18px;
       border-radius: 10px;
-      border: 1px solid var(--purple-20);
-      background: var(--purple-10);
+      border: 1px solid rgba(0,0,0,0.12);
+      background: rgba(0,0,0,0.04);
       transition: all 0.22s ease;
     }
 
     .gh-btn:hover {
-      background: rgba(124,58,237,0.16);
-      border-color: rgba(124,58,237,0.4);
+      background: rgba(0,0,0,0.08);
+      border-color: rgba(0,0,0,0.2);
     }
 
     /* ── Animations ────────────────────────────────────── */
@@ -365,7 +587,10 @@
 <body>
 
   <nav>
-    <span class="nav-brand"><em>coding</em>-chemist</span>
+    <a href="/" class="nav-brand">
+      <img src="sindhu-logo.png" alt="SINDHU — Si Nd H U" />
+      <span><em>coding</em>-chemist</span>
+    </a>
     <a href="https://github.com/coding-chemist" target="_blank">GitHub ↗</a>
   </nav>
 
@@ -391,18 +616,20 @@
     <!-- Projects -->
     <p class="section-label">Projects</p>
 
+    <div class="cards-grid">
+
     <!-- Apex: Autopilot -->
-    <div class="card">
+    <div class="card card-apex">
       <div class="card-head">
         <div class="card-identity">
           <svg width="28" height="28" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="11" cy="3.5" r="2" fill="#7c3aed"/>
-            <circle cx="3.5" cy="17" r="2" fill="#7c3aed"/>
-            <circle cx="18.5" cy="17" r="2" fill="#7c3aed"/>
-            <line x1="11" y1="5.5" x2="3.5" y2="15" stroke="#7c3aed" stroke-width="1.2"/>
-            <line x1="11" y1="5.5" x2="18.5" y2="15" stroke="#7c3aed" stroke-width="1.2"/>
-            <line x1="5.5" y1="17" x2="16.5" y2="17" stroke="#7c3aed" stroke-width="1.2"/>
-            <circle cx="11" cy="11" r="1.8" fill="rgba(124,58,237,0.25)" stroke="#7c3aed" stroke-width="0.8"/>
+            <circle cx="11" cy="3.5" r="2" fill="#0284c7"/>
+            <circle cx="3.5" cy="17" r="2" fill="#0284c7"/>
+            <circle cx="18.5" cy="17" r="2" fill="#0284c7"/>
+            <line x1="11" y1="5.5" x2="3.5" y2="15" stroke="#0284c7" stroke-width="1.2"/>
+            <line x1="11" y1="5.5" x2="18.5" y2="15" stroke="#0284c7" stroke-width="1.2"/>
+            <line x1="5.5" y1="17" x2="16.5" y2="17" stroke="#0284c7" stroke-width="1.2"/>
+            <circle cx="11" cy="11" r="1.8" fill="rgba(2,132,199,0.25)" stroke="#0284c7" stroke-width="0.8"/>
           </svg>
           <h2>Apex</h2>
         </div>
@@ -415,6 +642,7 @@
       <p class="card-desc">
         A sprint ceremony AI. Three ReAct agents — Scout, Analyst, Strategist — prepare your full sprint plan, risk analysis, and demo script from GitHub data. Walk into planning already knowing what to pick and why.
       </p>
+      <button class="read-more" onclick="openModal('apex')">read more →</button>
 
       <div class="card-rule"></div>
 
@@ -430,15 +658,15 @@
     </div>
 
     <!-- Beacon -->
-    <div class="card" style="animation-delay: 0.52s;">
+    <div class="card card-beacon" style="animation-delay: 0.52s;">
       <div class="card-head">
         <div class="card-identity">
           <svg width="28" height="28" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="11" cy="14" r="2.2" fill="#7c3aed"/>
-            <path d="M7.2 17.8a5.5 5.5 0 0 1 0-7.6" stroke="#7c3aed" stroke-width="1.25" stroke-linecap="round"/>
-            <path d="M14.8 17.8a5.5 5.5 0 0 0 0-7.6" stroke="#7c3aed" stroke-width="1.25" stroke-linecap="round"/>
-            <path d="M4 20.5a10 10 0 0 1 0-13" stroke="#7c3aed" stroke-width="1.25" stroke-linecap="round" opacity="0.4"/>
-            <path d="M18 20.5a10 10 0 0 0 0-13" stroke="#7c3aed" stroke-width="1.25" stroke-linecap="round" opacity="0.4"/>
+            <circle cx="11" cy="14" r="2.2" fill="#d97706"/>
+            <path d="M7.2 17.8a5.5 5.5 0 0 1 0-7.6" stroke="#d97706" stroke-width="1.25" stroke-linecap="round"/>
+            <path d="M14.8 17.8a5.5 5.5 0 0 0 0-7.6" stroke="#d97706" stroke-width="1.25" stroke-linecap="round"/>
+            <path d="M4 20.5a10 10 0 0 1 0-13" stroke="#d97706" stroke-width="1.25" stroke-linecap="round" opacity="0.4"/>
+            <path d="M18 20.5a10 10 0 0 0 0-13" stroke="#d97706" stroke-width="1.25" stroke-linecap="round" opacity="0.4"/>
           </svg>
           <h2>Beacon</h2>
         </div>
@@ -451,6 +679,7 @@
       <p class="card-desc">
         Multi-modal communication intelligence. Fuses face landmarks, body pose, hand gestures, speech transcription, and audio features into a second-by-second confidence timeline — so you know exactly how you come across.
       </p>
+      <button class="read-more" onclick="openModal('beacon')">read more →</button>
 
       <div class="card-rule"></div>
 
@@ -465,7 +694,7 @@
     </div>
 
     <!-- Curie -->
-    <div class="card" style="animation-delay: 0.59s;">
+    <div class="card card-curie" style="animation-delay: 0.59s;">
       <div class="card-head">
         <div class="card-identity">
           <svg width="28" height="28" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -486,19 +715,21 @@
       </div>
 
       <p class="card-desc">
-        An NMR structure elucidation RAG pipeline. Paste ¹H and ¹³C peak lists — Curie retrieves the closest known compounds from NMRShiftDB via FAISS, interprets every peak with an LLM grounded in retrieved candidates, and reranks results via RDKit substructure matching.
+        NMR structure elucidation — not retrieval, construction. Per-peak FAISS search grounds each signal in real NMRShiftDB evidence, LLM assembles fragments into candidate SMILES, RDKit validates and renders with interactive fragment highlighting. Hover a peak, see the atom light up.
       </p>
+      <button class="read-more" onclick="openModal('curie')">read more →</button>
 
       <div class="card-rule"></div>
 
       <div class="tags">
+        <span class="tag">Per-Peak RAG</span>
         <span class="tag">FAISS</span>
         <span class="tag">NMRShiftDB</span>
+        <span class="tag">Gaussian Scoring</span>
+        <span class="tag">RDKit</span>
+        <span class="tag">SSE Streaming</span>
         <span class="tag">FastAPI</span>
         <span class="tag">React</span>
-        <span class="tag">RDKit</span>
-        <span class="tag">RAG</span>
-        <span class="tag">LLM</span>
       </div>
 
       <div class="card-links">
@@ -506,6 +737,56 @@
         <a href="https://github.com/coding-chemist/Curie" target="_blank" class="card-link-secondary">GitHub ↗</a>
       </div>
     </div>
+
+    <!-- Darwin -->
+    <div class="card card-darwin" style="animation-delay: 0.66s;">
+      <div class="card-head">
+        <div class="card-identity">
+          <svg width="28" height="28" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="11" y1="20" x2="11" y2="12.5" stroke="#059669" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="11" y1="12.5" x2="5" y2="8.5" stroke="#059669" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="11" y1="12.5" x2="17" y2="8.5" stroke="#059669" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="5" y1="8.5" x2="2.5" y2="4.5" stroke="#059669" stroke-width="1" stroke-linecap="round"/>
+            <line x1="5" y1="8.5" x2="7.5" y2="4.5" stroke="#059669" stroke-width="1" stroke-linecap="round"/>
+            <line x1="17" y1="8.5" x2="14.5" y2="4.5" stroke="#059669" stroke-width="1" stroke-linecap="round"/>
+            <line x1="17" y1="8.5" x2="19.5" y2="4.5" stroke="#059669" stroke-width="1" stroke-linecap="round"/>
+            <circle cx="2.5"  cy="4"  r="1.3" fill="#059669"/>
+            <circle cx="7.5"  cy="4"  r="1.3" fill="#059669"/>
+            <circle cx="14.5" cy="4"  r="1.3" fill="#059669"/>
+            <circle cx="19.5" cy="4"  r="1.3" fill="#059669"/>
+            <circle cx="11"   cy="20.3" r="1.5" fill="#059669"/>
+          </svg>
+          <h2>Darwin</h2>
+        </div>
+        <div class="chip-live">
+          <span class="chip-dot"></span>
+          Live
+        </div>
+      </div>
+
+      <p class="card-desc">
+        An AI-augmented technical interview platform. Watches how candidates code with AI — prompting, debugging, iteration — then runs a 7-agent CrewAI panel to score the dimensions teams actually care about.
+      </p>
+      <button class="read-more" onclick="openModal('darwin')">read more →</button>
+
+      <div class="card-rule"></div>
+
+      <div class="tags">
+        <span class="tag">LangGraph</span>
+        <span class="tag">CrewAI</span>
+        <span class="tag">Multi-LLM</span>
+        <span class="tag">Monaco</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">React</span>
+      </div>
+
+      <div class="card-links">
+        <a href="https://darwin-eta.vercel.app" target="_blank" class="card-link-primary">Try it →</a>
+        <a href="https://github.com/coding-chemist/InterviewAgent" target="_blank" class="card-link-secondary">GitHub ↗</a>
+      </div>
+    </div>
+
+    </div><!-- /cards-grid -->
 
     <!-- Footer -->
     <footer>
@@ -517,6 +798,112 @@
     </footer>
 
   </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal-overlay" onclick="closeModal()">
+    <div id="modal-box" class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-band"></div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+      <div class="modal-inner">
+        <div id="modal-eyebrow" class="modal-eyebrow"></div>
+        <div id="modal-title" class="modal-title"></div>
+        <div id="modal-tagline" class="modal-tagline"></div>
+        <div id="modal-section-label" class="modal-section-label"></div>
+        <div id="modal-streams" class="modal-streams"></div>
+        <div id="modal-tags" class="modal-tags"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const projectData = {
+      apex: {
+        cls: 'card-apex',
+        eyebrow: 'Agentic AI · Building',
+        title: 'Apex',
+        tagline: 'Prepare your sprint ceremonies while you sleep.',
+        sectionLabel: 'The 3 ReAct Agents',
+        streams: [
+          { num: '01', name: 'Scout', desc: 'Investigates your GitHub commits via a ReAct loop — pulls bug history, churn, and owner load to flag risky modules before they bite.' },
+          { num: '02', name: 'Analyst', desc: 'Reasons over velocity, complexity, and past sprint patterns to re-estimate tickets and surface dependency conflicts.' },
+          { num: '03', name: 'Strategist', desc: 'Writes a ceremony-ready document — ranked items with risk justification and a demo script. Walk into planning already knowing what to pick and why.' }
+        ],
+        tags: ['LangGraph', 'Multi-Agent', 'Groq Llama 3.3', 'Gemini Flash', 'FAISS', 'MCP', 'scikit-learn', 'FastAPI']
+      },
+      beacon: {
+        cls: 'card-beacon',
+        eyebrow: 'Vision + Audio ML · Building',
+        title: 'Beacon',
+        tagline: 'Record yourself. Know exactly how you come across.',
+        sectionLabel: 'The 5 Signal Streams',
+        streams: [
+          { num: '01', name: 'OpenCV', desc: 'Face detection, gaze direction, eye-contact ratio, blink rate as a stress indicator.' },
+          { num: '02', name: 'Mediapipe Face Mesh', desc: '468 facial landmarks tracking micro-expressions, eyebrow engagement, jaw tension.' },
+          { num: '03', name: 'Mediapipe Pose + Hands', desc: 'Posture confidence score, shoulder tension, gesture openness, self-touching frequency.' },
+          { num: '04', name: 'Whisper (local)', desc: 'On-device transcription with filler-word detection — um, uh, like, you know.' },
+          { num: '05', name: 'librosa', desc: 'Speaking pace, pitch variation, vocal energy — fused with the rest into a second-by-second confidence timeline.' }
+        ],
+        tags: ['OpenCV', 'Mediapipe', 'Whisper', 'librosa', 'spaCy', 'scikit-learn', 'Gemini Flash', 'FastAPI']
+      },
+      curie: {
+        cls: 'card-curie',
+        eyebrow: 'Structure Elucidation · Live',
+        title: 'Curie',
+        tagline: 'Bottom-up NMR elucidation: each peak searched individually in FAISS, grouped by J-coupling, fragments assembled into structures by LLM, validated by RDKit. Hover a peak — watch the atom light up.',
+        sectionLabel: 'The 6-Stage Pipeline',
+        streams: [
+          { num: '01', name: 'Per-Peak FAISS RAG', desc: 'Each peak searched individually against 10,340 NMRShiftDB compounds. Peak groups detected by J-coupling (7.47+6.90 at J=8.7Hz → para ring). LLM identifies fragments from retrieved evidence — not a lookup table.' },
+          { num: '02', name: 'Gaussian Shift Scoring', desc: 'Candidates scored using Gaussian kernel matching (from NMRViT paper). Per-peak score breakdown: predicted vs experimental shifts with adaptive sigma (1.0 ppm for known, 5.0 for LLM-predicted).' },
+          { num: '03', name: 'Structure Construction', desc: 'LLM builds candidate SMILES from confirmed fragments + connectivity + formula. RDKit validates valence, formula match. Not retrieval — actual construction of new molecules.' },
+          { num: '04', name: 'Fragment Blob Highlighting', desc: 'RDKit renders SVG with fragment-level colored blobs (like professional editors). Pre-generated per fragment — hover swaps are instant, no API call.' },
+          { num: '05', name: 'SSE Pipeline Streaming', desc: '6-stage real-time progress: Features → RAG → Interpret → Scoring → Prediction → Explanation. Circuit breaker: first 429 trips it, all subsequent calls skip to Groq fallback.' },
+          { num: '06', name: 'Interactive V2 Page', desc: 'Central structure with vertical spectra on both sides. Hover any peak → fragment lights up on structure → insight text updates. Bidirectional: hover atom → peak highlights. Colors match between spectrum and structure.' }
+        ],
+        tags: ['Per-Peak RAG', 'FAISS', 'NMRShiftDB', 'Gaussian Scoring', 'Structure Construction', 'RDKit', 'SSE Streaming', 'Circuit Breaker', 'Pydantic', 'FastAPI', 'React', 'HuggingFace']
+      },
+      darwin: {
+        cls: 'card-darwin',
+        eyebrow: 'Behavior Analytics · Live',
+        title: 'Darwin',
+        tagline: 'Naturalist for modern developers. Watches how you code with AI — then judges what makes you effective.',
+        sectionLabel: 'The 4 Analyst Agents',
+        streams: [
+          { num: '01', name: 'Prompting Skills · Groq Llama 3.3', desc: 'Scores multi-turn prompt clarity, context-loading, and how precisely the candidate specifies intent to the AI.' },
+          { num: '02', name: 'Production Thinking · Groq Llama 3.3', desc: 'Reads decisions about error handling, edge cases, and what "done" looks like in real production code.' },
+          { num: '03', name: 'Problem Understanding · Mistral', desc: 'Long-horizon breakdowns and edge-case reasoning — measures how completely the candidate grasps the task.' },
+          { num: '04', name: 'Debugging Behavior · Gemini 1.5 Pro', desc: 'Precision-analyses error reactions, hypothesis quality, and recovery patterns when things go wrong.' }
+        ],
+        tags: ['LangGraph', 'CrewAI', 'Multi-LLM Routing', 'Groq', 'Mistral', 'Gemini', 'Monaco Editor', 'FastAPI', 'React', 'Sandbox']
+      }
+    };
+
+    function openModal(key) {
+      const d = projectData[key];
+      if (!d) return;
+      const box = document.getElementById('modal-box');
+      box.className = 'modal-box ' + d.cls;
+      document.getElementById('modal-eyebrow').textContent = d.eyebrow;
+      document.getElementById('modal-title').textContent = d.title;
+      document.getElementById('modal-tagline').textContent = d.tagline;
+      document.getElementById('modal-section-label').textContent = d.sectionLabel;
+      document.getElementById('modal-streams').innerHTML = d.streams.map(s =>
+        `<div class="modal-stream">
+          <div class="modal-stream-num">${s.num}</div>
+          <div class="modal-stream-text"><strong>${s.name}</strong><span>${s.desc}</span></div>
+        </div>`
+      ).join('');
+      document.getElementById('modal-tags').innerHTML = d.tags.map(t =>
+        `<span class="tag">${t}</span>`
+      ).join('');
+      document.getElementById('modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
 
 </body>
 </html>
