@@ -295,18 +295,25 @@
       border-radius: 22px;
       border: 1px solid rgba(255,255,255,0.92);
       box-shadow: 0 40px 96px rgba(0,0,0,0.24);
-      max-width: 600px;
+      max-width: 720px;
+      max-height: 85vh;
       width: 100%;
       position: relative;
       animation: riseIn 0.32s ease forwards;
       overflow: hidden;
       padding: 0;
+      display: flex;
+      flex-direction: column;
     }
     .modal-band {
       height: 5px;
       background: linear-gradient(90deg, var(--c, #7c3aed) 0%, var(--ch, #6d28d9) 100%);
     }
-    .modal-inner { padding: 40px 44px 36px; }
+    .modal-inner { padding: 40px 44px 36px; overflow-y: auto; flex: 1; scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.15) transparent; }
+    .modal-inner::-webkit-scrollbar { width: 5px; }
+    .modal-inner::-webkit-scrollbar-track { background: transparent; }
+    .modal-inner::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 10px; }
+    .modal-inner::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.25); }
     .modal-close {
       position: absolute;
       top: 16px; right: 20px;
@@ -782,7 +789,7 @@
 
       <div class="card-links">
         <a href="https://darwin-eta.vercel.app" target="_blank" class="card-link-primary">Try it →</a>
-        <a href="https://github.com/coding-chemist/InterviewAgent" target="_blank" class="card-link-secondary">GitHub ↗</a>
+        <a href="https://github.com/coding-chemist/Darwin" target="_blank" class="card-link-secondary">GitHub ↗</a>
       </div>
     </div>
 
