@@ -1,20 +1,47 @@
-# 👋 Welcome to my little corner of GitHub! 🧪💻  
+<p align="center">
+  <img src="banner.png" alt="Coding Chemist — where science meets intelligence" width="100%">
+</p>
 
-Step into the **Coding-Chemist's Lab**, where science meets code and curiosity sparks innovation!  
+---
 
-I used to wonder, *"Why would a chemist learn to code?"* But then it clicked: coding is like talking to computers, and the best part? They tell you exactly where you went wrong! It's a form of communication that’s precise and logical—perfect for someone who enjoys solving complex problems methodically.
+**Engineer at the intersection of chemistry and AI. Lead in practice. Senior on paper.**
 
-## My Journey 🚀  
-What started with Python as a simple way to automate tasks has now led me into a world of infinite possibilities. Python introduced me to its amazing “friends” like Artificial Intelligence, Machine Learning, Deep Learning, Data Science, GenAI, R—and the list keeps growing!  
+MSc Chemistry · MS Data Science · 6+ years shipping production AI.
 
-Now, I’m on a mission to build:
-- **Beautiful, engaging projects** that solve real-world problems.  
-- **Automation tools** to make life easier and more fun.  
-- **Cool experiments** that combine creativity with cutting-edge tech.
+---
 
-Continuous learning and persistence drive me. Progress may be gradual, but every step counts.
-I document my learning journey and projects here—always open to feedback and discussions! 
+Chemistry taught me to distrust confidence without evidence. AI is still learning that lesson — and some of us are building the lessons in.
 
-[<img src="https://www.freepnglogos.com/uploads/official-linkedin-logo----17.png" alt="LinkedIn" width="40" height="40">](https://www.linkedin.com/in/sindhujasivaraman/)
+Half my work is building AI that behaves like a chemistry experiment — *hypothesis, evidence, citation, peer review*. The other half is refusing to skip the careful parts when everyone else is in a hurry.
 
-Happy Coding! 😊
+**Discipline isn't overhead. It's the work.**
+
+---
+
+## Lab
+
+**01 — [Curie](https://github.com/coding-chemist/Curie)**
+Citation-backed RAG pipeline for NMR structure elucidation. *Retrieves first, reasons second, shows its work.*
+
+**02 — [Darwin](https://github.com/coding-chemist/Darwin)**
+AI-augmented technical interview platform. *A 7-agent panel scores how candidates code with AI in the loop.*
+
+**03 — [SmartHire](https://github.com/coding-chemist/SmartHire)**
+LLM-powered resume screening with structured candidate comparisons and SWOT analysis.
+
+**04 — [Explore-AI](https://github.com/coding-chemist/Explore-AI)**
+A living notebook of AI topics. *Published as I learn them.*
+
+---
+
+## How I work
+
+**Retrieve before you reason. Validate before you trust. Cite before you conclude.**
+
+Not a slogan — discipline. Chemistry fails publicly when you cut corners. AI fails *confidently*. Both demand the same humility: build the audit trail first, then earn the right to a conclusion.
+
+---
+
+[LinkedIn ↗](https://www.linkedin.com/in/sindhujasivaraman/) · [Portfolio ↗](https://coding-chemist.vercel.app)
+
+> *I know it's hard. But it's possible.*
