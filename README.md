@@ -4,7 +4,7 @@
 
 ---
 
-**Engineer at the intersection of chemistry and AI. Lead in practice. Senior on paper.**
+**Engineer at the intersection of Chemistry and AI. Lead in practice. Senior on paper.**
 
 MSc Chemistry · MS Data Science · 6+ years shipping production AI.
 
