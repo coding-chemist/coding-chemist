@@ -6,7 +6,7 @@
 
 **Engineer at the intersection of Chemistry and AI. Lead in practice. Senior on paper.**
 
-MSc Chemistry · MS Data Science · 6+ years shipping production AI.
+MSc Chemistry · MS Data Science · 6+ years production track at HTC — Chemistry data work that evolved into NLP, LLM extraction, and Agentic systems.
 
 ---
 
